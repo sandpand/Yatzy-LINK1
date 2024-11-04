@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream> 
 #include <cstdlib> // Needed for rand() and srand()
 #include <ctime>   // Needed for time()
 using namespace std;
@@ -22,17 +22,17 @@ void MainMenu()
     do {
         switch (choice)
         {
-            case 1:
+            case 1: //Play the game
             break;
 
-            case 2:
+            case 2: //Rules
             break;
 
-            case 3:
+            case 3: //Quit game
             gameIsRunning = false;
             break;
 
-            default:
+            default: //
             cout << "Invalid choice. Please try again.";
         }
         } while (gameIsRunning);
