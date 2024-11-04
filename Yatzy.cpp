@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cstdlib> // Needed for rand() and srand()
 #include <ctime>   // Needed for time()
-
 using namespace std;
 
 
@@ -13,7 +12,7 @@ void Gameplay();
 
 bool gameIsRunning = true;
 
-
+//Main menu function
 void MainMenu()
     {
     cout << "Main Menu" << endl;
@@ -40,7 +39,7 @@ void MainMenu()
         cout << "Thanks for playing!";
     }
 
-
+//Gameplay 
 void Gameplay()
 {
     string player1;
@@ -53,8 +52,8 @@ void Gameplay()
     cin >> player2;
 }
 
-
-int diceRoll()
+//Diceroll function
+int DiceRoll()
 {
     // Set the seed using the current time
     srand(static_cast<unsigned int>(time(0)));
@@ -68,7 +67,7 @@ int diceRoll()
 
 }
 
-
+//Main 
 int main ()
 {
     cout << "Welcome to Yatzy" << endl;
