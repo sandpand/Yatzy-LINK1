@@ -4,7 +4,15 @@
 
 using namespace std;
 
+
+// Definition of functions
+int diceRoll();
+void MainMenu();
+void Gameplay();
+
+
 bool gameIsRunning = true;
+
 
 void MainMenu()
     {
@@ -32,6 +40,7 @@ void MainMenu()
         cout << "Thanks for playing!";
     }
 
+
 void Gameplay()
 {
     string player1;
@@ -44,16 +53,6 @@ void Gameplay()
     cin >> player2;
 }
 
-int diceRoll ();    
-
-int main ()
-
-
-{
-    cout << "Welcome to Yatzy" << endl;
-    MainMenu();
-    return 0;
-}
 
 int diceRoll()
 {
@@ -67,4 +66,12 @@ int diceRoll()
         cout << randomNumber<< endl; // Random number between 0 and 99
     }
 
+}
+
+
+int main ()
+{
+    cout << "Welcome to Yatzy" << endl;
+    MainMenu();
+    return 0;
 }
