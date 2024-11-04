@@ -2,12 +2,14 @@
 
 using namespace std; 
 
+
+
 int main ()
 {   
     string player1; 
     string player2; 
 
-    //Greeting & asking player to enter their names; 
+    //Greeting & asking players to enter their names; 
     cout << "Welcome to Yatzy";  
 
     cout << "Player 1, please enter your name";    
@@ -15,6 +17,12 @@ int main ()
 
     cout << "Player 2, please enter your name";    
     cin >> player2; 
+
+
+
+
+
+
 
 
 
