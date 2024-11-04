@@ -88,6 +88,16 @@ int DiceRoll()
     return 0;
 }
 
+void player::setName()
+{
+    // Code
+};
+
+void player::rollDice()
+{
+    // Code
+};
+
 //Main 
 int main ()
 {
