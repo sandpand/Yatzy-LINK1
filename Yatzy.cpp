@@ -6,20 +6,26 @@ bool gameIsRunning = true;
 
 void MainMenu()
     {
+    cout << "Main Menu" << endl;
     int choice;
+    cout << "Enter your choice: ";
     cin >> choice;
     do {
         switch (choice)
         {
-        case 1:
-        break;
-        case 2:
-        break;
-        case 3:
-        break;
-        default:
+            case 1:
+            break;
+
+            case 2:
+            break;
+
+            case 3:
+            gameIsRunning = false;
+            break;
+
+            default:
+            cout << "Invalid choice. Please try again.";
         }
-        gameIsRunning = false;
         } while (gameIsRunning);
         cout << "Thanks for playing!";
     }
@@ -38,6 +44,7 @@ void Gameplay()
 
 int main ()
 {
+    cout << "Welcome to Yatzy" << endl;
     MainMenu();
     return 0;
 }
