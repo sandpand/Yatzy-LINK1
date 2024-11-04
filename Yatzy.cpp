@@ -5,12 +5,19 @@ using namespace std;
 
 
 // Definition of functions
-int diceRoll();
+int DiceRoll();
 void MainMenu();
+void rules();
 void Gameplay();
 
 
 bool gameIsRunning = true;
+
+void  rules() {
+    cout << "Rules of the game" << endl;
+    cin.ignore();
+    cin.get();
+};
 
 //Main menu function
 void MainMenu()
@@ -23,9 +30,11 @@ void MainMenu()
         switch (choice)
         {
             case 1:
+            Gameplay();
             break;
 
             case 2:
+            rules();
             break;
 
             case 3:
@@ -50,6 +59,8 @@ void Gameplay()
     cin >> player1;
     cout << "Player 2, please enter your name";
     cin >> player2;
+
+    DiceRoll();
 }
 
 //Diceroll function
@@ -64,7 +75,7 @@ int DiceRoll()
         int randomNumber = (rand() % 6) + 1; 
         cout << randomNumber<< endl; // Random number between 0 and 99
     }
-
+    return 0;
 }
 
 //Main 
