@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream> 
 #include <cstdlib> // Needed for rand() and srand()
 #include <ctime>   // Needed for time()
 using namespace std;
@@ -37,12 +37,12 @@ void MainMenu()
             rules();
             break;
 
-            case 3:
+            case 3: //Quit game
             gameIsRunning = false;
             break;
 
             default:
-git             cout << "Invalid choice. Please try again.";
+            cout << "Invalid choice. Please try again.";
         }
         } while (gameIsRunning);
         cout << "Thanks for playing!";
