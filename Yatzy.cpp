@@ -1,8 +1,18 @@
 #include <iostream> 
 #include <cstdlib> // Needed for rand() and srand()
 #include <ctime>   // Needed for time()
+
 using namespace std;
 
+class player // Can be expanded with scores, etc
+{
+    private:
+        string name;
+        int die[6];
+    public:
+        void setName(); // Sets player name
+        void rollDice(); // Maybe combine this one with DiceRoll eventually
+};
 
 // Definition of functions
 int DiceRoll();
