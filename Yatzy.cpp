@@ -42,7 +42,7 @@ void MainMenu()
             break;
 
             default:
-            cout << "Invalid choice. Please try again.";
+git             cout << "Invalid choice. Please try again.";
         }
         } while (gameIsRunning);
         cout << "Thanks for playing!";
