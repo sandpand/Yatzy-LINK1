@@ -1,8 +1,19 @@
 #include <iostream> 
 #include <cstdlib> // Needed for rand() and srand()
 #include <ctime>   // Needed for time()
+#include <windows.h> // Needed for Sleep()
+#include <string>
+#include <vector>
 
 using namespace std;
+
+bool gameIsRunning = true;
+
+// Definition of functions
+int DiceRoll();
+void MainMenu();
+void rules();
+void Gameplay();
 
 class player // Can be expanded with scores, etc
 {
@@ -14,29 +25,39 @@ class player // Can be expanded with scores, etc
         void rollDice(); // Maybe combine this one with DiceRoll eventually
 };
 
-// Definition of functions
-int DiceRoll();
-void MainMenu();
-void rules();
-void Gameplay();
-
-
-bool gameIsRunning = true;
-
-void  rules() {
+void  rules() 
+{
     cout << "Rules of the game" << endl;
     cin.ignore();
     cin.get();
 };
 
+void sleepForSeconds (int seconds) 
+{
+    Sleep(seconds * 1000);
+};
+
+void clearScreen() 
+{
+    system("cls");
+}
+
 //Main menu function
 void MainMenu()
     {
+    clearScreen();
     cout << "Main Menu" << endl;
+    cout << "-------------------" << endl << endl;
+    cout << "1. Play" << endl;
+    cout << "2. Rules" << endl;
+    cout << "3. Quit" << endl;
+
     int choice;
-    cout << "Enter your choice: ";
+    cout << endl << "Enter your choice: ";
     cin >> choice;
-    do {
+
+    do 
+    {
         switch (choice)
         {
             case 1:
@@ -54,9 +75,10 @@ void MainMenu()
             default:
             cout << "Invalid choice. Please try again.";
         }
-        } while (gameIsRunning);
+    } while (gameIsRunning);
         cout << "Thanks for playing!";
-    }
+        sleepForSeconds(3);
+}
 
 //Gameplay 
 void Gameplay()
@@ -70,6 +92,7 @@ void Gameplay()
     cout << "Player 2, please enter your name";
     cin >> player2;
 
+    
     DiceRoll();
 }
 
@@ -102,6 +125,7 @@ void player::rollDice()
 int main ()
 {
     cout << "Welcome to Yatzy" << endl;
+    sleepForSeconds(3);
     MainMenu();
     return 0;
 }
