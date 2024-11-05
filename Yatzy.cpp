@@ -101,18 +101,27 @@ void clearScreen()
 //Main menu function
 
 
+void playerSelection () 
+{
+    clearScreen();
+    bool playerSelection = true;
+    if (playerSelection != true) {
+        Player player1;
+        Player player2;
+        cout << "Enter Player 1's name:" << endl;
+        player1.setName();
+        cout << "Enter Player 2's name:" << endl;
+        player2.setName();
+    }
+    else {
+        return;
+    }
+}	
+
 //Gameplay 
 void Gameplay()
 {
-    Player player1;
-    Player player2;   
-    //Greeting & asking player to enter their names;
-    cout << "Welcome to Yatzy";
-    cout << "Player 1, please enter your name" << endl;
-    player1.setName();
-    cout << "Player 2, please enter your name" << endl;
-    player2.setName();
-    
+    clearScreen();
     Game game1;
     game1.DiceRoll();
 }
@@ -136,6 +145,7 @@ void MainMenu()
         switch (choice)
         {
             case 1:
+            playerSelection();
             Gameplay();
             break;
 
