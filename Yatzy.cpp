@@ -15,17 +15,73 @@ void MainMenu();
 void rules();
 void Gameplay();
 
-class player // Can be expanded with scores, etc
+class Player // Can be expanded with scores, etc
 {
     private:
         string name;
         int die[6];
     public:
-        void setName(); // Sets player name
-        void rollDice(); // Maybe combine this one with DiceRoll eventually
+        string setName() {
+            cout << "Enter your name: ";
+            cin >> name;
+            return name;
+        }; // Sets player name
 };
 
-void  rules() 
+class Game
+{
+    private:
+        int score;
+        int round;
+        int totalScore;
+        
+        vector<int> diceRoll;
+
+    public:
+        Game () : diceRoll(5) {}
+
+        void setScore(int score) {
+            this->score = score;
+        };
+        void setRound(int round) {
+            this->round = round;
+        };
+        void setTotalScore(int totalScore) {
+            this->totalScore = totalScore;
+        };
+        int getScore() {
+            return score;
+        };
+        int getRound() {
+            return round;
+        };
+        int getTotalScore() {
+            return totalScore;
+        };
+        int DiceRoll()
+        {
+            // Set the seed using the current time
+            srand(static_cast<unsigned int>(time(0)));
+            // Generate and print 5 random numbers
+            for (int i = 0; i < 5; i++) 
+            {
+                int randomNumber = (rand() % 6) + 1; 
+                cout << randomNumber<< endl; // Random number between 0 and 99
+                diceRoll.push_back(randomNumber);
+            }
+            return 0;
+        };
+        void printDice() const 
+        {
+            for (int die : diceRoll) 
+            {
+                cout << die << " ";
+            }
+            cout << endl;
+        };
+};
+
+void rules() 
 {
     cout << "Rules of the game" << endl;
     cin.ignore();
@@ -43,6 +99,25 @@ void clearScreen()
 }
 
 //Main menu function
+
+
+//Gameplay 
+void Gameplay()
+{
+    Player player1;
+    Player player2;   
+    //Greeting & asking player to enter their names;
+    cout << "Welcome to Yatzy";
+    cout << "Player 1, please enter your name" << endl;
+    player1.setName();
+    cout << "Player 2, please enter your name" << endl;
+    player2.setName();
+    
+    Game game1;
+    game1.DiceRoll();
+}
+
+
 void MainMenu()
     {
     clearScreen();
@@ -79,47 +154,6 @@ void MainMenu()
         cout << "Thanks for playing!";
         sleepForSeconds(3);
 }
-
-//Gameplay 
-void Gameplay()
-{
-    string player1;
-    string player2;
-    //Greeting & asking player to enter their names;
-    cout << "Welcome to Yatzy";
-    cout << "Player 1, please enter your name";
-    cin >> player1;
-    cout << "Player 2, please enter your name";
-    cin >> player2;
-
-    
-    DiceRoll();
-}
-
-//Diceroll function
-int DiceRoll()
-{
-    // Set the seed using the current time
-    srand(static_cast<unsigned int>(time(0)));
-
-    // Generate and print 5 random numbers
-    for (int i = 0; i < 5; i++) 
-    {
-        int randomNumber = (rand() % 6) + 1; 
-        cout << randomNumber<< endl; // Random number between 0 and 99
-    }
-    return 0;
-}
-
-void player::setName()
-{
-    // Code
-};
-
-void player::rollDice()
-{
-    // Code
-};
 
 //Main 
 int main ()
