@@ -129,19 +129,20 @@ void Gameplay()
 
 void MainMenu()
     {
-    clearScreen();
-    cout << "Main Menu" << endl;
-    cout << "-------------------" << endl << endl;
-    cout << "1. Play" << endl;
-    cout << "2. Rules" << endl;
-    cout << "3. Quit" << endl;
-
-    int choice;
-    cout << endl << "Enter your choice: ";
-    cin >> choice;
-
     do 
     {
+        clearScreen();
+        
+        cout << "Main Menu" << endl;
+        cout << "-------------------" << endl << endl;
+        cout << "1. Play" << endl;
+        cout << "2. Rules" << endl;
+        cout << "3. Quit" << endl;
+
+        int choice;
+        cout << endl << "Enter your choice: ";
+        cin >> choice;
+
         switch (choice)
         {
             case 1:
@@ -159,6 +160,8 @@ void MainMenu()
 
             default:
             cout << "Invalid choice. Please try again.";
+            sleepForSeconds(2);
+            break;
         }
     } while (gameIsRunning);
         cout << "Thanks for playing!";
